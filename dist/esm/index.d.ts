@@ -1,4 +1,4 @@
-import { CameraPreviewPlugin } from './definitions';
-declare const CameraPreview: CameraPreviewPlugin;
+import { CapacitorUtilitiesPlugin } from './definitions';
+declare const CapacitorUtilities: CapacitorUtilitiesPlugin;
 export * from './definitions';
-export { CameraPreview };
+export { CapacitorUtilities };

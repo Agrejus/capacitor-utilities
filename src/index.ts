@@ -1,9 +1,9 @@
 import { registerPlugin } from '@capacitor/core';
-import { CameraPreviewPlugin } from './definitions';
+import { CapacitorUtilitiesPlugin } from './definitions';
 
-const CameraPreview = registerPlugin<CameraPreviewPlugin>('CapacitorUtilities', {
-  web: () => import('./web').then((m) => new m.CameraPreviewWeb()),
+const CapacitorUtilities = registerPlugin<CapacitorUtilitiesPlugin>('CapacitorUtilities', {
+  web: () => import('./web').then((m) => new m.CapacitorUtilitiesWeb()),
 });
 
 export * from './definitions';
-export { CameraPreview };
+export { CapacitorUtilities };

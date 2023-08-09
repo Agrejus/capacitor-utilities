@@ -8,29 +8,14 @@ import AVFoundation
 @objc(CapacitorUtilities)
 public class CapacitorUtilities: CAPPlugin {
 
-    var previewView: UIView!
-    var cameraPosition = String()
-    let cameraController = CameraController()
-    var x: CGFloat?
-    var y: CGFloat?
-    var width: CGFloat?
-    var height: CGFloat?
-    var paddingBottom: CGFloat?
-    var rotateWhenOrientationChanged: Bool?
-    var toBack: Bool?
-    var storeToFile: Bool?
-    var enableZoom: Bool?
-    var highResolutionOutput: Bool = false
-    var disableAudio: Bool = false
-    var onTap = "onTap"
-
+    let capacitorUtilities = CapacitorUtilities()
 
     @objc func getDeviceSpecifications(_ call: CAPPluginCall) {
         do {
-            try self.cameraController.
-            call.resolve(["value": imageBase64!])
+            let physicalMemory = self.capacitorUtilities.getDevicePhysicalMemory()
+            call.resolve(["physicalMemory": physicalMemory])
         } catch {
-            call.reject("failed to set focus")
+            call.reject("Failed to get device specifications")
         }
     }
 }
