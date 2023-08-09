@@ -1,17 +1,9 @@
-//
-//  CameraController.swift
-//  Plugin
-//
-//  Created by Ariel Hernandez Musa on 7/14/19.
-//  Copyright © 2019 Max Lynch. All rights reserved.
-//
-
 import AVFoundation
 import UIKit
 
-extension CapacitorUtilities {
-     
-    func getDevicePhysicalMemory() {
+@objc public class CapacitorUtilities: NSObject {
+
+    @objc public func getDevicePhysicalMemory() -> UInt64 {
         return ProcessInfo.processInfo.physicalMemory
     }
 }
